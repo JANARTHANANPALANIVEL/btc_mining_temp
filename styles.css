@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+  background-color: #121212;
+  line-height: 1.6;
+}
+
+.mining-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo i {
+  font-size: 1.5rem;
+  color: #00b4d8;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#wallet-address {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #aaa;
+  background-color: #252525;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+#logout-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+#logout-btn:hover {
+  color: #fff;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav {
+  padding: 1rem 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #bbb;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sidebar li a:hover {
+  background-color: #252525;
+  color: #fff;
+}
+
+.sidebar li.active a {
+  background-color: #252525;
+  color: #00b4d8;
+  border-left: 3px solid #00b4d8;
+}
+
+.sidebar li i {
+  width: 20px;
+  text-align: center;
+}
+
+.status-panel {
+  margin-top: auto;
+  padding: 1rem 1.5rem;
+  background-color: #222;
+  border-top: 1px solid #333;
+}
+
+.status-panel h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #ddd;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.status-active {
+  color: #4caf50;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background-color: #121212;
+}
+
+/* Stats Cards */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.card-header i {
+  font-size: 1.25rem;
+  color: #00b4d8;
+}
+
+.card-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.card-footer {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.positive {
+  color: #4caf50;
+}
+
+.negative {
+  color: #f44336;
+}
+
+/* Mining Controls */
+.mining-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-panel, .mining-log {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.control-panel h3, .mining-log h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.control-row label {
+  width: 120px;
+  color: #bbb;
+}
+
+select, input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #252525;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.slider-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="range"] {
+  flex: 1;
+  height: 5px;
+  -webkit-appearance: none;
+  background: #333;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #00b4d8;
+  cursor: pointer;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-btn {
+  background-color: #00b4d8;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #0096c7;
+}
+
+.primary-btn:disabled {
+  background-color: #0077b6;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background-color: #333;
+  color: #ddd;
+}
+
+.secondary-btn:hover {
+  background-color: #444;
+}
+
+.secondary-btn:disabled {
+  background-color: #222;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Mining Log */
+.log-container {
+  height: 250px;
+  overflow-y: auto;
+  background-color: #252525;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.log-entry {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.log-entry.system {
+  color: #888;
+}
+
+.log-entry.info {
+  color: #00b4d8;
+}
+
+.log-entry.success {
+  color: #4caf50;
+}
+
+.log-entry.warning {
+  color: #ff9800;
+}
+
+.log-entry.error {
+  color: #f44336;
+}
+
+/* Hardware Monitor */
+.hardware-monitor {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hardware-monitor h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.hardware-card {
+  background-color: #252525;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.hardware-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.hardware-header h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.hardware-model {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.hardware-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 50px;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00b4d8;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+#cpu-temp .progress, #gpu-temp .progress {
+  background-color: #4caf50;
+}
+
+#cpu-temp.warning .progress, #gpu-temp.warning .progress {
+  background-color: #ff9800;
+}
+
+#cpu-temp.danger .progress, #gpu-temp.danger .progress {
+  background-color: #f44336;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .mining-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hardware-grid {
+    grid-template-columns: 1fr;
+  }
+}

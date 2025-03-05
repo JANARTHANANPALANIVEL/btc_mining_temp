@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Statistics - CryptoMiner Pro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="statistics.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="mining-container">
+      <header>
+        <div class="logo">
+          <i class="fas fa-microchip"></i>
+          <h1>CryptoMiner Pro</h1>
+        </div>
+        <div class="user-info">
+          <span id="wallet-address">0x7F5EB35d27d1B3d7B98d63e0c5D7C59BCe76e5a9</span>
+          <button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+      </header>
+      
+      <div class="dashboard">
+        <div class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+              <li><a href="mining-rigs.html"><i class="fas fa-server"></i> Mining Rigs</a></li>
+              <li class="active"><a href="statistics.html"><i class="fas fa-chart-line"></i> Statistics</a></li>
+              <li><a href="wallet.html"><i class="fas fa-wallet"></i> Wallet</a></li>
+              <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+          </nav>
+          <div class="status-panel">
+            <h3>Network Status</h3>
+            <div class="status-item">
+              <span>Network</span>
+              <span class="status-active">Active</span>
+            </div>
+            <div class="status-item">
+              <span>Difficulty</span>
+              <span id="difficulty">34.25 TH</span>
+            </div>
+            <div class="status-item">
+              <span>Block Height</span>
+              <span id="block-height">793,421</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-content">
+          <div class="page-header">
+            <h2>Mining Statistics</h2>
+            <div class="time-filter">
+              <button class="filter-btn active" data-period="24h">24h</button>
+              <button class="filter-btn" data-period="7d">7d</button>
+              <button class="filter-btn" data-period="30d">30d</button>
+              <button class="filter-btn" data-period="all">All</button>
+              <button class="filter-btn custom" data-period="custom">Custom</button>
+            </div>
+          </div>
+          
+          <div class="stats-summary">
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <div class="summary-data">
+                <h3>Average Hash Rate</h3>
+                <div class="summary-value">245.32 MH/s</div>
+                <div class="summary-change positive">+2.3% from previous period</div>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-coins"></i>
+              </div>
+              <div class="summary-data">
+                <h3>Total Earnings</h3>
+                <div class="summary-value">0.00724156 BTC</div>
+                <div class="summary-change positive">$434.49</div>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="summary-data">
+                <h3>Accepted Shares</h3>
+                <div class="summary-value">28,456</div>
+                <div class="summary-change positive">98.2% acceptance rate</div>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="summary-data">
+                <h3>Power Consumption</h3>
+                <div class="summary-value">7,680 kWh</div>
+                <div class="summary-change negative">$921.60 cost</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="stats-charts">
+            <div class="chart-container full-width">
+              <div class="chart-header">
+                <h3>Hash Rate Over Time</h3>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color" style="background-color: #00b4d8;"></span>
+                    <span class="legend-label">Hash Rate (MH/s)</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color" style="background-color: #4caf50;"></span>
+                    <span class="legend-label">Network Difficulty (scaled)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-body">
+                <div class="chart-placeholder large">
+                  <div class="chart-line"></div>
+                  <div class="chart-line"></div>
+                  <div class="chart-line"></div>
+                  <div class="chart-line"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chart-container half-width">
+              <div class="chart-header">
+                <h3>Daily Earnings</h3>
+              </div>
+              <div class="chart-body">
+                <div class="chart-placeholder">
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                  <div class="chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chart-container half-width">
+              <div class="chart-header">
+                <h3>Share Distribution</h3>
+              </div>
+              <div class="chart-body">
+                <div class="chart-placeholder pie">
+                  <div class="pie-segment"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chart-container half-width">
+              <div class="chart-header">
+                <h3>Power Efficiency</h3>
+              </div>
+              <div class="chart-body">
+                <div class="chart-placeholder">
+                  <div class="chart-line"></div>
+                  <div class="chart-line"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chart-container half-width">
+              <div class="chart-header">
+                <h3>Temperature History</h3>
+              </div>
+              <div class="chart-body">
+                <div class="chart-placeholder">
+                  <div class="chart-line"></div>
+                  <div class="chart-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mining-history">
+            <h3>Mining History</h3>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Algorithm</th>
+                    <th>Avg. Hash Rate</th>
+                    <th>Shares (A/R)</th>
+                    <th>Earnings</th>
+                    <th>Power</th>
+                    <th>Efficiency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-04-15</td>
+                    <td>SHA-256</td>
+                    <td>245.32 MH/s</td>
+                    <td>1,245 / 23</td>
+                    <td>0.00032156 BTC</td>
+                    <td>320 W</td>
+                    <td>0.77 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-14</td>
+                    <td>SHA-256</td>
+                    <td>239.87 MH/s</td>
+                    <td>1,198 / 19</td>
+                    <td>0.00031245 BTC</td>
+                    <td>315 W</td>
+                    <td>0.76 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-13</td>
+                    <td>SHA-256</td>
+                    <td>242.56 MH/s</td>
+                    <td>1,223 / 21</td>
+                    <td>0.00031789 BTC</td>
+                    <td>318 W</td>
+                    <td>0.76 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-12</td>
+                    <td>SHA-256</td>
+                    <td>240.12 MH/s</td>
+                    <td>1,201 / 18</td>
+                    <td>0.00031356 BTC</td>
+                    <td>317 W</td>
+                    <td>0.76 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-11</td>
+                    <td>SHA-256</td>
+                    <td>238.45 MH/s</td>
+                    <td>1,192 / 22</td>
+                    <td>0.00031124 BTC</td>
+                    <td>316 W</td>
+                    <td>0.75 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-10</td>
+                    <td>SHA-256</td>
+                    <td>236.78 MH/s</td>
+                    <td>1,184 / 20</td>
+                    <td>0.00030987 BTC</td>
+                    <td>315 W</td>
+                    <td>0.75 MH/W</td>
+                  </tr>
+                  <tr>
+                    <td>2025-04-09</td>
+                    <td>SHA-256</td>
+                    <td>235.92 MH/s</td>
+                    <td>1,180 / 17</td>
+                    <td>0.00030876 BTC</td>
+                    <td>314 W</td>
+                    <td>0.75 MH/W</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="pagination">
+              <button class="page-btn"><i class="fas fa-angle-double-left"></i></button>
+              <button class="page-btn"><i class="fas fa-angle-left"></i></button>
+              <span class="page-info">Page 1 of 12</span>
+              <button class="page-btn"><i class="fas fa-angle-right"></i></button>
+              <button class="page-btn"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+          </div>
+          
+          <div class="export-section">
+            <h3>Export Data</h3>
+            <p>Download your mining statistics for record keeping or analysis</p>
+            <div class="export-options">
+              <button class="export-btn"><i class="fas fa-file-csv"></i> CSV</button>
+              <button class="export-btn"><i class="fas fa-file-excel"></i> Excel</button>
+              <button class="export-btn"><i class="fas fa-file-pdf"></i> PDF</button>
+              <button class="export-btn"><i class="fas fa-file-code"></i> JSON</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Date Range Modal -->
+    <div class="modal" id="date-range-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Select Date Range</h3>
+          <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date">
+          </div>
+          
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="secondary-btn" id="cancel-date-range">Cancel</button>
+          <button class="primary-btn" id="apply-date-range">Apply</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
