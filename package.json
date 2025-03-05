@@ -1,17 +1,67 @@
 {
-  "name": "cryptominer-pro",
+  "name": "minig",
   "version": "1.0.0",
-  "description": "Professional cryptocurrency mining management software",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "description": "\"# btc_mining_temp\"",
+  "main": "mining-rigs.js",
   "dependencies": {
-    "chart.js": "^4.4.0",
+    "ansi-regex": "^5.0.1",
+    "ansi-styles": "^4.3.0",
+    "camelcase": "^5.3.1",
+    "chart.js": "^4.4.8",
+    "cliui": "^6.0.0",
+    "color-convert": "^2.0.1",
+    "color-name": "^1.1.4",
     "date-fns": "^2.30.0",
-    "qrcode": "^1.5.3",
+    "decamelize": "^1.2.0",
+    "dijkstrajs": "^1.0.3",
+    "emoji-regex": "^8.0.0",
+    "esbuild": "^0.18.20",
+    "find-up": "^4.1.0",
+    "get-caller-file": "^2.0.5",
+    "is-fullwidth-code-point": "^3.0.0",
+    "locate-path": "^5.0.0",
+    "nanoid": "^3.3.8",
+    "p-limit": "^2.3.0",
+    "p-locate": "^4.1.0",
+    "p-try": "^2.2.0",
+    "path-exists": "^4.0.0",
+    "picocolors": "^1.1.1",
+    "pngjs": "^5.0.0",
+    "postcss": "^8.5.3",
+    "qrcode": "^1.5.4",
+    "regenerator-runtime": "^0.14.1",
+    "require-directory": "^2.1.1",
+    "require-main-filename": "^2.0.0",
+    "rollup": "^3.29.5",
+    "set-blocking": "^2.0.0",
+    "source-map-js": "^1.2.1",
+    "string-width": "^4.2.3",
+    "strip-ansi": "^6.0.1",
     "uuid": "^9.0.1",
-    "vite": "^4.5.0"
-  }
+    "vite": "^4.5.9",
+    "which-module": "^2.0.1",
+    "wrap-ansi": "^6.2.0",
+    "y18n": "^4.0.3",
+    "yargs": "^15.4.1",
+    "yargs-parser": "^18.1.3"
+  },
+  "devDependencies": {},
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "vite"
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JANARTHANANPALANIVEL/btc_mining_temp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JANARTHANANPALANIVEL/btc_mining_temp/issues"
+  },
+  "homepage": "https://github.com/JANARTHANANPALANIVEL/btc_mining_temp#readme"
 }
